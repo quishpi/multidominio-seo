@@ -6,6 +6,8 @@ namespace MDS\Core;
 
 defined('ABSPATH') || exit;
 
+use MDS\Admin\AdminProvider;
+
 /**
  * Clase principal del plugin.
  */
@@ -51,16 +53,9 @@ final class Plugin
      */
     public static function activate(): void
     {
-        if (!get_option('mds_settings')) {
+        $repository = new \MDS\Repository\SettingsRepository();
 
-            add_option(
-                'mds_settings',
-                [
-                    'version' => MDS_VERSION,
-                    'domains' => [],
-                ]
-            );
-        }
+        $repository->reset();
 
         flush_rewrite_rules();
     }
@@ -96,13 +91,10 @@ final class Plugin
      */
     private function registerProviders(): void
     {
-        /*
-         * Próximamente:
-         *
-         * $this->registerProvider(
-         *      new AdminProvider($this)
-         * );
-         *
+        $this->registerProvider(
+            new AdminProvider($this)
+        );
+         /*
          * $this->registerProvider(
          *      new DomainProvider($this)
          * );

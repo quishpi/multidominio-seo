@@ -7,8 +7,13 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
+    'MDS\\Admin\\AdminProvider' => $baseDir . '/includes/Admin/AdminProvider.php',
+    'MDS\\Admin\\Menu' => $baseDir . '/includes/Admin/Menu.php',
     'MDS\\Core\\AbstractProvider' => $baseDir . '/includes/Core/AbstractProvider.php',
     'MDS\\Core\\Loader' => $baseDir . '/includes/Core/Loader.php',
     'MDS\\Core\\Plugin' => $baseDir . '/includes/Core/Plugin.php',
     'MDS\\Core\\ProviderInterface' => $baseDir . '/includes/Core/ProviderInterface.php',
+    'MDS\\Models\\Domain' => $baseDir . '/includes/Models/Domain.php',
+    'MDS\\Repository\\DomainRepository' => $baseDir . '/includes/Repository/DomainRepository.php',
+    'MDS\\Repository\\SettingsRepository' => $baseDir . '/includes/Repository/SettingsRepository.php',
 );
