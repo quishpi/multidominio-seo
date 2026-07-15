@@ -1,5 +1,5 @@
 <?php
-
+declare(strict_types=1);
 /**
  * Plugin Name: Multidominio SEO
  * Plugin URI: https://webmarket.ec
@@ -10,8 +10,6 @@
  * Author: Luis Quishpi
  * Text Domain: multidominio-seo
  */
-
-declare(strict_types=1);
 
 defined('ABSPATH') || exit;
 
