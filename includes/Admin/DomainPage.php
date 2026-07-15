@@ -10,9 +10,11 @@ defined('ABSPATH') || exit;
 
 final class DomainPage
 {
-    public function __construct(
-        private readonly DomainService $service = new DomainService()
-    ) {
+    private readonly DomainService $service;
+
+    public function __construct(?DomainService $service = null)
+    {
+        $this->service = $service ?? new DomainService();
     }
 
     public function render(): void

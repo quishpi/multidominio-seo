@@ -12,9 +12,11 @@ defined('ABSPATH') || exit;
 
 final class DomainService
 {
-    public function __construct(
-        private readonly DomainRepository $repository = new DomainRepository()
-    ) {
+    private readonly DomainRepository $repository;
+
+    public function __construct(?DomainRepository $repository = null)
+    {
+        $this->repository = $repository ?? new DomainRepository();
     }
 
     /**
