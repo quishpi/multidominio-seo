@@ -16,8 +16,8 @@ final class Menu
     public function register(): void
     {
         add_menu_page(
-            __('Dashboard', 'multidominio-seo'),
-            __('Dashboard', 'multidominio-seo'),
+            __('Multidominio SEO', 'multidominio-seo'),
+            __('Multidominio SEO', 'multidominio-seo'),
             'manage_options',
             'multidominio-seo',
             [$this->dashboard, 'render'],
