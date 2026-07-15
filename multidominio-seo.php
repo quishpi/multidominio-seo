@@ -21,7 +21,19 @@ define('MDS_PLUGIN_PATH', plugin_dir_path(__FILE__));
 define('MDS_PLUGIN_URL', plugin_dir_url(__FILE__));
 define('MDS_PLUGIN_BASENAME', plugin_basename(__FILE__));
 
-require_once MDS_PLUGIN_PATH . 'vendor/autoload.php';
+$autoload = MDS_PLUGIN_PATH . 'vendor/autoload.php';
+
+if (! file_exists($autoload)) {
+    add_action('admin_notices', static function (): void {
+        echo '<div class="notice notice-error"><p>';
+        echo esc_html__('Multidominio SEO: no se encontró vendor/autoload.php. Ejecute Composer antes de activar el plugin.', 'multidominio-seo');
+        echo '</p></div>';
+    });
+
+    return;
+}
+
+require_once $autoload;
 
 use MDS\Core\Plugin;
 
