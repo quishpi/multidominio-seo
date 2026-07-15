@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace MDS\Admin;
 
 use MDS\Core\AbstractProvider;
+use MDS\Admin\DomainActions;
 
 defined('ABSPATH') || exit;
 
@@ -12,13 +13,20 @@ final class AdminProvider extends AbstractProvider
 {
     public function register(): void
     {
-        $adminMenu = new Menu();
+        $actions = new DomainActions();
 
         $this->loader->add(
             'action',
-            'admin_menu',
-            $adminMenu,
-            'register'
+            'admin_post_mds_save_domain',
+            $actions,
+            'save'
+        );
+
+        $this->loader->add(
+            'action',
+            'admin_post_mds_delete_domain',
+            $actions,
+            'delete'
         );
     }
 }

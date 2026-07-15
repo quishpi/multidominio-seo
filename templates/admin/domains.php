@@ -11,7 +11,9 @@ defined('ABSPATH') || exit;
         <?php esc_html_e('Dominios', 'multidominio-seo'); ?>
     </h1>
 
-    <a href="#" class="page-title-action">
+    <a
+    href="<?= esc_url(admin_url('admin.php?page=multidominio-seo-domain')); ?>"
+    class="page-title-action">
         <?php esc_html_e('Agregar dominio', 'multidominio-seo'); ?>
     </a>
 
