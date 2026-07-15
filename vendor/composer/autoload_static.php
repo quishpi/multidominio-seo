@@ -23,6 +23,11 @@ class ComposerStaticInitfda2419e0efad46c4fca4055176ba4e1
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'MDS\\Admin\\AdminProvider' => __DIR__ . '/../..' . '/includes/Admin/AdminProvider.php',
+        'MDS\\Admin\\DashboardPage' => __DIR__ . '/../..' . '/includes/Admin/DashboardPage.php',
+        'MDS\\Admin\\DomainActions' => __DIR__ . '/../..' . '/includes/Admin/DomainActions.php',
+        'MDS\\Admin\\DomainController' => __DIR__ . '/../..' . '/includes/Admin/DomainController.php',
+        'MDS\\Admin\\DomainFormPage' => __DIR__ . '/../..' . '/includes/Admin/DomainFormPage.php',
+        'MDS\\Admin\\DomainPage' => __DIR__ . '/../..' . '/includes/Admin/DomainPage.php',
         'MDS\\Admin\\Menu' => __DIR__ . '/../..' . '/includes/Admin/Menu.php',
         'MDS\\Core\\AbstractProvider' => __DIR__ . '/../..' . '/includes/Core/AbstractProvider.php',
         'MDS\\Core\\Loader' => __DIR__ . '/../..' . '/includes/Core/Loader.php',
@@ -31,6 +36,7 @@ class ComposerStaticInitfda2419e0efad46c4fca4055176ba4e1
         'MDS\\Models\\Domain' => __DIR__ . '/../..' . '/includes/Models/Domain.php',
         'MDS\\Repository\\DomainRepository' => __DIR__ . '/../..' . '/includes/Repository/DomainRepository.php',
         'MDS\\Repository\\SettingsRepository' => __DIR__ . '/../..' . '/includes/Repository/SettingsRepository.php',
+        'MDS\\Services\\DomainService' => __DIR__ . '/../..' . '/includes/Services/DomainService.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

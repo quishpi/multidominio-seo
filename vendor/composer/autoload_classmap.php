@@ -8,6 +8,11 @@ $baseDir = dirname($vendorDir);
 return array(
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
     'MDS\\Admin\\AdminProvider' => $baseDir . '/includes/Admin/AdminProvider.php',
+    'MDS\\Admin\\DashboardPage' => $baseDir . '/includes/Admin/DashboardPage.php',
+    'MDS\\Admin\\DomainActions' => $baseDir . '/includes/Admin/DomainActions.php',
+    'MDS\\Admin\\DomainController' => $baseDir . '/includes/Admin/DomainController.php',
+    'MDS\\Admin\\DomainFormPage' => $baseDir . '/includes/Admin/DomainFormPage.php',
+    'MDS\\Admin\\DomainPage' => $baseDir . '/includes/Admin/DomainPage.php',
     'MDS\\Admin\\Menu' => $baseDir . '/includes/Admin/Menu.php',
     'MDS\\Core\\AbstractProvider' => $baseDir . '/includes/Core/AbstractProvider.php',
     'MDS\\Core\\Loader' => $baseDir . '/includes/Core/Loader.php',
@@ -16,4 +21,5 @@ return array(
     'MDS\\Models\\Domain' => $baseDir . '/includes/Models/Domain.php',
     'MDS\\Repository\\DomainRepository' => $baseDir . '/includes/Repository/DomainRepository.php',
     'MDS\\Repository\\SettingsRepository' => $baseDir . '/includes/Repository/SettingsRepository.php',
+    'MDS\\Services\\DomainService' => $baseDir . '/includes/Services/DomainService.php',
 );
