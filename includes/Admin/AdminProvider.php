@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace MDS\Admin;
 
 use MDS\Core\AbstractProvider;
-use MDS\Admin\DomainActions;
 
 defined('ABSPATH') || exit;
 
@@ -13,6 +12,21 @@ final class AdminProvider extends AbstractProvider
 {
     public function register(): void
     {
+        /*
+         * Registrar el menú principal del plugin.
+         */
+        $menu = new Menu();
+
+        $this->loader->add(
+            'action',
+            'admin_menu',
+            $menu,
+            'register'
+        );
+
+        /*
+         * Registrar las acciones POST.
+         */
         $actions = new DomainActions();
 
         $this->loader->add(

@@ -39,9 +39,9 @@ final class Menu
         $form = new DomainFormPage();
 
         add_submenu_page(
-            null,
-            __('Dominio', 'multidominio-seo'),
-            __('Dominio', 'multidominio-seo'),
+        '',
+        __('Dominio', 'multidominio-seo'),
+        __('Dominio', 'multidominio-seo'),
             'manage_options',
             'multidominio-seo-domain',
             [$form, 'render']
