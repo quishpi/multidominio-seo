@@ -16,8 +16,8 @@ final class Menu
     public function register(): void
     {
         add_menu_page(
-            __('Multidominio SEO', 'multidominio-seo'),
-            __('Multidominio SEO', 'multidominio-seo'),
+            __('Dashboard', 'multidominio-seo'),
+            __('Dashboard', 'multidominio-seo'),
             'manage_options',
             'multidominio-seo',
             [$this->dashboard, 'render'],
@@ -39,12 +39,25 @@ final class Menu
         $form = new DomainFormPage();
 
         add_submenu_page(
-        '',
-        __('Dominio', 'multidominio-seo'),
-        __('Dominio', 'multidominio-seo'),
+            'multidominio-seo',
+            __('Dominio', 'multidominio-seo'),
+            __('Dominio', 'multidominio-seo'),
             'manage_options',
             'multidominio-seo-domain',
             [$form, 'render']
+        );
+
+        remove_submenu_page(
+            'multidominio-seo',
+            'multidominio-seo-domain'
+        );
+    }
+
+    public function hideSubmenus(): void
+    {
+        remove_submenu_page(
+            'multidominio-seo',
+            'multidominio-seo-domain'
         );
     }
 }

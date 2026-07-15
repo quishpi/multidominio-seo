@@ -42,5 +42,13 @@ final class AdminProvider extends AbstractProvider
             $actions,
             'delete'
         );
+
+        $this->loader->add(
+            'action',
+            'admin_menu',
+            $menu,
+            'hideSubmenus',
+            999
+        );
     }
 }
