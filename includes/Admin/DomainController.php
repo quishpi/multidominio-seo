@@ -10,8 +10,18 @@ final class DomainController
 {
     public function index(): void
     {
-        $page = new DomainPage();
+        $action = sanitize_key($_GET['action'] ?? 'list');
 
-        $page->render();
+        switch ($action) {
+
+            case 'new':
+            case 'edit':
+                (new DomainFormPage())->render();
+                break;
+
+            default:
+                (new DomainPage())->render();
+                break;
+        }
     }
 }
