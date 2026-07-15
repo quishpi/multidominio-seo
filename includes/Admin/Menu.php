@@ -8,6 +8,13 @@ defined('ABSPATH') || exit;
 
 final class Menu
 {
+    private DashboardPage $dashboard;
+
+    public function __construct()
+    {
+        $this->dashboard = new DashboardPage();
+    }
+
     public function register(): void
     {
         add_menu_page(
@@ -15,20 +22,20 @@ final class Menu
             __('Multidominio SEO', 'multidominio-seo'),
             'manage_options',
             'multidominio-seo',
-            [$this, 'render'],
+            [$this->dashboard, 'render'],
             'dashicons-admin-site',
-            80
+            60
         );
-    }
 
-    public function render(): void
-    {
-        ?>
-        <div class="wrap">
-            <h1><?php esc_html_e('Multidominio SEO', 'multidominio-seo'); ?></h1>
+        $controller = new DomainController();
 
-            <p><?php esc_html_e('Versión 1.0.0', 'multidominio-seo'); ?></p>
-        </div>
-        <?php
+        add_submenu_page(
+            'multidominio-seo',
+            __('Dominios', 'multidominio-seo'),
+            __('Dominios', 'multidominio-seo'),
+            'manage_options',
+            'multidominio-seo-domains',
+            [$controller, 'index']
+        );
     }
 }
